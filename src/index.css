@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.burger {
+  display: flex;
+  width: 35px;
+  aspect-ratio: 1;
+  transition: all 250ms ease-out;
+  cursor: pointer !important;
+}
+
+.burger:before {
+  content: "";
+  width: 40px;
+  cursor: pointer;
+  height: 2px;
+  position: absolute;
+  background: #1a1a1a;
+  transition: all 250ms ease-out;
+  will-change: transform;
+}
+
+.burger:after {
+  content: "";
+  cursor: pointer;
+
+  width: 40px;
+  height: 2px;
+  position: absolute;
+  background: #1a1a1a;
+  transition: all 250ms ease-out;
+  will-change: transform;
+}
+
+.burger:before {
+  transform: translateY(-3px);
+}
+
+.burger:after {
+  transform: translateY(10px);
+}
+
+.active.burger:before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.active.burger:after {
+  transform: translateY(0) rotate(-45deg);
+}
+.menu.active{
+  transform: translateX(0);
+}
